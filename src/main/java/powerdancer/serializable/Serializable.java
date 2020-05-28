@@ -112,13 +112,13 @@ public interface Serializable {
          return forBytes(baos.toByteArray());
     }
 
-    static Serializable forInt(int digits, int n) {
+    static Serializable forIntAsString(int digits, int n) {
         String s = String.format("%0"+digits+"d", n);
         if (s.length() > digits) throw new IllegalArgumentException("longer than " + digits + " digits");
         return Serializable.forString(s);
     }
 
-    static Serializable forInt(int n) {
+    static Serializable forIntAsString(int n) {
         return Serializable.forString(n + "");
     }
 
