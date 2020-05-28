@@ -1,0 +1,27 @@
+plugins {
+    id 'java'
+    id 'org.javamodularity.moduleplugin' version '1.6.0'
+    id 'maven-publish'
+}
+
+group 'powerdancer.serializable'
+version '1.0'
+
+sourceCompatibility = 14
+targetCompatibility = 14
+
+repositories {
+    mavenLocal()
+    mavenCentral()
+}
+
+dependencies {
+}
+
+publishing {
+    publications {
+        maven(MavenPublication) {
+            from components.java
+        }
+    }
+}
